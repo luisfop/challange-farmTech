@@ -1,0 +1,31 @@
+@import "../../../common/reusableVars.scss";
+@import "../../../common/breakpoints.scss";
+
+.header {
+  width: 100%;
+  height: 70px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  
+  &__logo {
+    max-width: 100%;
+    height: auto;
+    padding: 1rem;
+    margin: 0px $logo-margin;
+    will-change: filter;
+    transition: filter $transition-duration ease-in-out;
+
+    @media (max-width: $mobile) {
+      display: block;
+      margin: 0 auto;
+    }
+
+    &:hover {
+      filter: drop-shadow(0 0 2em $primary-color);
+      cursor: pointer;
+    }
+
+    &.react:hover {
+      filter: drop-shadow(0 0 2em $primary-color);
+    }
+  }
+}

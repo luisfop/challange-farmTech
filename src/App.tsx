@@ -1,11 +1,13 @@
+import Description from "./components/BaseLayout/Description/Description";
+import Header from "./components/BaseLayout/Header/Header";
 
 
 function App() {
   return (
     <>
-      {/* <Header /> */}
+      <Header />
       <section>
-        {/* <Description /> */}
+        <Description />
         <h1>Initial</h1>
       </section>
       {/* <BaseLayout /> */}

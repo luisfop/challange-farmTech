@@ -1,5 +1,7 @@
 # Frontend Testing - FarmTech ( PLENO )
 
+URL: https://challange-farm-tech.vercel.app/
+
 ## Objetivo
 
 Uma aplicação que funcione como uma lista de países para consulta de dados do COVID.

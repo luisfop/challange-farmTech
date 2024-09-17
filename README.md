@@ -1,50 +1,51 @@
-# React + TypeScript + Vite
+# Frontend Testing - FarmTech ( PLENO )
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Objetivo
 
-Currently, two official plugins are available:
+Uma aplicação que funcione como uma lista de países para consulta de dados do COVID.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Requisitos
 
-## Expanding the ESLint configuration
+- Yarn ou npm
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Estrutura do Projeto
 
-- Configure the top-level `parserOptions` property like this:
+- `src/`: Contém o código-fonte da App.
+  - `components/`: Contém os componentes React.
+    - `MyComponent/`
+      - `MyComponent.tsx`
+      - `MyComponent.scss` (estilos para `MyComponent`)
+  - `utils/`: Funções utilitárias e helpers.
+  - `common/`: Variaveis SCSS.
+  - `types/`: Tipagem.
+  - `assets`: Imagens e logo.
+- `package.json`: Arquivo de configuração do projeto.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Configuração
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+1. **Instalar Dependências**
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+   Execute o comando abaixo para instalar todas as dependências necessárias:
+
+   ```bash
+   npm install
+
+1. **Rodar a aplicação**
+
+   Execute o comando abaixo para rodar a app localmente:
+
+   ```bash
+   npm run dev
+   
+
+## Observações e Considerações
+
+- API: A API busca os dados referente a ultima data de dados coletados ("last_update": "2023-03-10 04:21:03")
+
+- Utilizei a biblioteca de inifite-scroll listada a seguir para renderizar conforme o usuario faça a ação de scrollar a página, utilizando de lazy-loading e carregando assim as proximas paginas da API com os dados.
+
+- Criei um bloco de sugestões que é exibido a partir do momento em que o usuario digita na caixa de texto para buscar determinado país, sendo necessario o clique para a busca do mesmo.
+  ( debounce utilizado para garantir que o request não seja feito diversas vezes conforme o usuario digita cada letra, com o tempo de 1seg )
+
+- A aplicação está de forma simples com estilos criados do zero e sem utilização de libs UI, porém minimamente responsiva.

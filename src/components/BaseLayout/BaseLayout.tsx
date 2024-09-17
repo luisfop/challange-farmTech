@@ -1,11 +1,10 @@
 import { useState } from "react";
-
-import InfiniteScroll from "react-infinite-scroll-component";
+import Search from "../Search/Search";
 import { useFetchAllCountrys } from "../../hooks/useFetchAllCountrys";
 import { useFetchCountry } from "../../hooks/useFetchCountry";
-import CountryCard from "../CountryCard/CountryCard";
+import SelectedCountry from "../SelectedCountry/SelectedCountry";
+import RegionsList from "../RegionList/RegionsList";
 import "./baseLayout.scss";
-import Search from "../Search/Search";
 
 const BaseLayout = () => {
   const [page, setPage] = useState<number>(1);
@@ -14,48 +13,26 @@ const BaseLayout = () => {
   const { regions, hasMore, loading: regionsLoading } = useFetchAllCountrys(page, itemsPerPage);
   const { specificRegion, handleSearchByCountry, setSpecificRegion } = useFetchCountry();
 
-  const renderRegionContent = () => {
-    if (specificRegion) {
-      return (
-        <div className="base-layout__hero">
-          <CountryCard
-            region={{
-              name: specificRegion?.name,
-              iso: specificRegion?.iso,
-            }}
-          />
-          <button
-            className="base-layout__country-button"
-            onClick={() => setSpecificRegion(null)}
-          >
-            Voltar para lista de países
-          </button>
-        </div>
-      );
-    }
-    return (
-      <InfiniteScroll
-        dataLength={regions.length}
-        next={() => setPage((prevPage) => prevPage + 1)}
-        hasMore={hasMore}
-        loader={regionsLoading && <p>Carregando a lista de países...</p>}
-        endMessage={<p>Todos os países exibidos</p>}
-      >
-        <div className="base-layout__hero">
-          {regions.map((region, index) => (
-            <CountryCard key={index} region={region} />
-          ))}
-        </div>
-      </InfiniteScroll>
-    );
-  };
-
   return (
     <>
       <div className="base-layout__wrapper">
         <Search handleSearchByCountry={handleSearchByCountry} />
       </div>
-      <div className="base-layout__region-container">{renderRegionContent()}</div>
+      <div className="base-layout__region-container">
+        {specificRegion ? (
+          <SelectedCountry
+            specificRegion={specificRegion}
+            setSpecificRegion={setSpecificRegion}
+          />
+        ) : (
+          <RegionsList
+            regions={regions}
+            setPage={setPage}
+            hasMore={hasMore}
+            regionsLoading={regionsLoading}
+          />
+        )}
+      </div>
     </>
   );
 };

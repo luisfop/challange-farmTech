@@ -1,0 +1,110 @@
+@import "../../common/breakpoints.scss";
+@import "../../common/reusableVars.scss";
+
+.search-card {
+  display: flex;
+  flex-direction: column;
+  width: 55rem;
+  height: 11rem;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  padding: 0.25rem;
+  align-items: center;
+  position: relative; 
+  
+  @media (max-width: $large-desktop) {
+    width: 40rem;
+  }
+
+  @media (max-width: $desktop) {
+    width: 35rem;
+  }
+
+  @media (max-width: $tablet) {
+    width: 90%;
+    margin: 0.5rem;
+    padding: 2rem;
+    height: auto;
+  }
+
+  @media (max-width: $mobile) {
+    width: 100%;
+    height: auto;
+    padding: 2rem;
+  }
+}
+
+.search-card__form {
+  width: inherit;
+  display: flex;
+  justify-content: center;
+}
+
+.search-card__title {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 500;
+
+  @media (max-width: $mobile) {
+    font-size: 1.2rem;
+  }
+}
+
+.search-card__input {
+  border: none;
+  border-bottom: 2px solid $primary-color;
+  outline: none;
+  padding: 0.5rem 0;
+  font-size: 1rem;
+  width: 80%;
+  max-width: 40rem;
+  margin: 0;
+  background-color: transparent;
+  box-sizing: border-box;
+
+  @media (max-width: $large-desktop) {
+    width: 85%;
+  }
+
+  @media (max-width: $desktop) {
+    width: 90%;
+  }
+
+  @media (max-width: $tablet) {
+    width: 95%;
+  }
+
+  @media (max-width: $mobile) {
+    width: 100%;
+  }
+}
+
+.search-card__input--focus {
+  border-bottom-color: $primary-color;
+  box-shadow: none;
+}
+
+
+.search-card__suggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: white;
+  border: 1px solid #ccc;
+  border-top: none;
+  border-radius: 0 0 4px 4px;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.search-card__suggestion {
+  padding: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.search-card__suggestion:hover {
+  background-color: #f0f0f0;
+}

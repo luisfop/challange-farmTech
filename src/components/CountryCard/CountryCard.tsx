@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import "./countryCard.scss";
-import { Region } from "../../common/interfaces/Regions/Region";
+import { Region } from "../../types/Region";
 import { useFetchCountry } from "../../hooks/useFetchCountry";
 
 const CountryCard = ({ region }: { region: Region }) => {

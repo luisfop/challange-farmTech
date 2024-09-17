@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { fetchCountryData } from "../utils/apiHandlers";
-import { Region } from "../common/interfaces/Regions/Region";
-import { SpecificRegionData } from "../common/interfaces/Regions/ApiData";
+
+import { Region } from "../types/Region";
+import { SpecificRegionData } from "../types/SpecificRegionData";
 
 export const useFetchCountry = () => {
   const [specificRegion, setSpecificRegion] = useState<{

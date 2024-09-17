@@ -1,4 +1,4 @@
-import { Region } from "../common/interfaces/Regions/Region";
+import { Region } from "../types/Region";
 
 const BASE_URL = "https://covid-api.com/api";
 

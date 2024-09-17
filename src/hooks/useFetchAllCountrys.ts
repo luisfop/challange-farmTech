@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { fetchAllCountrys } from "../utils/apiHandlers";
-import { Region } from "../common/interfaces/Regions/Region";
+import { Region } from "../types/Region";
+
 
 export const useFetchAllCountrys = (page: number, itemsPerPage: number) => {
   const [regions, setRegions] = useState<Region[]>([]);

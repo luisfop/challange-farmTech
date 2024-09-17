@@ -1,0 +1,90 @@
+@import "../../common/reusableVars.scss";
+@import "../../common/breakpoints.scss";
+
+.country-card {
+  width: 55rem;
+  height: 12rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 3rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+
+  &__title {
+    text-align: center;
+    font-size: 1.5rem;
+  }
+
+  &__section {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+  }
+
+  &__data-column {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  &__label {
+    font-size: 1.2rem;
+  }
+
+  &__value {
+    margin-top: 0.5rem;
+    font-size: 1.75rem;
+    color: $primary-color;
+    font-weight: 600;
+  }
+
+  &__loading {
+    font-size: 1.5rem;
+    color: $primary-color;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+  }
+
+  @media (max-width: $large-desktop) {
+    width: 50rem;
+    height: 12rem;
+  }
+
+  @media (max-width: $desktop) {
+    width: 40rem;
+
+    .country-card__title {
+      font-size: 1.4rem;
+    }
+  }
+
+  @media (max-width: $tablet) {
+    margin-top: 0;
+    height: auto;
+    width: 30rem;
+
+    .country-card__title {
+      font-size: 1.3rem;
+    }
+
+    .country-card__section {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  @media (max-width: $mobile) {
+    width: 100%;
+
+    .country-card__title {
+      font-size: 1.2rem;
+    }
+
+    .country-card__section {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}

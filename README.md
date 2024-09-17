@@ -40,7 +40,6 @@ Uma aplicação que funcione como uma lista de países para consulta de dados do
    ```bash
    npm run dev
    
-
 ## Observações e Considerações
 
 - API: A API busca os dados referente a ultima data de dados coletados ("last_update": "2023-03-10 04:21:03")
@@ -51,3 +50,9 @@ Uma aplicação que funcione como uma lista de países para consulta de dados do
   ( debounce utilizado para garantir que o request não seja feito diversas vezes conforme o usuario digita cada letra, com o tempo de 1seg )
 
 - A aplicação está de forma simples com estilos criados do zero e sem utilização de libs UI, porém minimamente responsiva.
+
+### Links e referencias
+
+* https://www.npmjs.com/package/react-infinite-scroll-component
+* https://lodash.com/
+* https://react.dev/

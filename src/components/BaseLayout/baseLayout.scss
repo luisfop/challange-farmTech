@@ -1,0 +1,38 @@
+@import '../../common/reusableVars.scss';
+
+.base-layout__wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.base-layout__country-button {
+  background-color: $primary-color;
+  border-radius: 5%;
+  padding: 0.75rem;
+  border: none;
+  &:hover {
+    filter: drop-shadow(0 0 0.5em $primary-color);
+    cursor: pointer;
+  }
+}
+
+.base-layout__hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.base-layout__region-container {
+  margin-top: 2rem;
+  padding: 1rem;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .base-layout__hero {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
